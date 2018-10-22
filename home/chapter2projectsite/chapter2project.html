@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+      CIS166AA - JavaScript
+      Chapter 2
+      Chapter case project
+
+      Programming Informational Webpage      
+      
+      Author: Andrew Dorre
+      Date:   10/22/2018
+
+      Filename: index.html
+   -->
+    <title>Andrew Dorre - CIS166AA</title>
+    <script src="modernizr.custom.05819.js"></script>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <nav>
+        | <a href="../index.html">Home</a> |
+    </nav>
+    <header>
+        <h1>Chapter 2 Project - Time to Math</h1>
+    </header>
+
+    <!--I'm having a really hard time getting the input fields
+    to simply float to the right of the labels for them. Float 
+    doesn't really act the way I want, and inline-block, or inline
+    I tried padding, I just can't get it to do what I want
+    without putting it in a table!-->
+    <article>
+        <form id="mathform">
+            <fieldset>
+                <legend>Math!</legend>
+                <table>
+                    <tr>                        
+                        <td><label for="add"><p>Add: </p></label></td>                         
+                        <td><input type="number" id="add" value=0></td>                        
+                    </tr>
+                    <tr>
+                        <td><label for="subtract"><p>Subtract: </p></label></td>
+                        <td><input type="number" id="subtract" value=0></td>
+                    </tr>
+                    <tr>
+                        <td><label for="multiply"><p>Multiply: </p></label></td>
+                        <td><input type="number" id="multiply" value=0></td>
+                    </tr>
+                    <tr>
+                        <td><label for="divide"><p>Divide: </p></label></td>
+                        <td><input type="number" id="divide" value=0></td>
+                    </tr>                
+                </table>
+            </fieldset>
+        </form>
+    </article>
+    
+    <br/>
+    <p>Total after all your math: <span id="total"></span></p>
+
+    <!-- 
+    All photos were downloaded from pexels.com. They let me set custom sizes, so I could make them all the same dimensions.
+    I set them all for 1920x911. Leaving this note in case I want to go back for more. Then I set them to 50% size for now. Website is
+    not really responsive at all at this point, but I just wanted to get something up to start with.
+    -->
+    <img src="pexels-photo-459225.jpg" width="50%" height="50%">
+
+    <h3>This page is devoted to my current classes: PHP (CIS166AE), JavaScript (CIS166AA) and C# Level 2 (CIS262AD)</h3>
+    <br/>
+    <p>The plan is to provide some helpful details for each programming language, and hopefully help myself, and maybe someone else
+        <br/> to better understand them! The primary focus will be the JavaScript class, since the site will be updated
+        <br/>and maintained specifically for credit in that class. I'm also hoping to use this page to highlight some of the tricks
+        <br/>I have learned in each language, and display some of them here.
+    </p>
+    <script src="math.js"></script>
+</body>
+
+</html>
