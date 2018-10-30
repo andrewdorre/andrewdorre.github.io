@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chapter 3 Project</title>
+	<link rel="stylesheet" href="styles.css"></style>
+	
+</head>
+<body>
+
+<h1>Chapter 3 Project</h1>
+
+<div>
+	<table>
+		<tr>
+			<td>Cycle Text Color:</td><td><button id="cycletext" onclick="cycleText()">Text</button></td>		
+		</tr>
+		<tr>
+			<td>Cycle Background Color:</td><td><button onclick="cycleBackground()">Background</button></td>
+		</tr>
+		<tr>
+			<td>Cycle Colors Automatically: </td><td><button id ="start" onclick="started = setTimeout(autoCycle(), 2000)">Start</button></td>
+			<td><button id="stop">Stop</button></td>
+		</tr>
+		<tr>
+			<td>Reset to Default?</td><td><button id="reset">Reset</button></td>
+		</tr>
+	</table>
+</div>
+
+<div id="colorback">
+	<h1 id="text">This text is changing color!!!</h1>
+</div>
+<p>Counter is </p><p id="tester">Test?</p>
+<script src="colors.js"></script>
+</body>
+</html>
