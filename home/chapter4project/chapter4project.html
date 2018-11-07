@@ -12,6 +12,7 @@
       Filename: chapter4project.html
    -->
    <title>Andrew Dorre - Chapter 4 Project</title>
+   <link rel="stylesheet" type="text/css" href="styles.css">
    <script src="modernizr.custom.05819.js"></script>
 </head>
 <body>
@@ -24,12 +25,14 @@
         <input type="text" id="firstname" value=""><br>
         Last name:<br>
         <input type="text" id="lastname" value=""><br>
-        <br>        
+        <br>                
     </form>
-    <button onclick="displayResults()">Submit</button>
-    <br><br>
-    <p id="firstresult">First</p><br>
-    <p id="secondresult">Second</p>
+    <div>
+        <button onclick="displayResults()">Submit</button>
+    </div>
+    <br>
+    <p>First Name: <span id="firstresult">First</span></p>
+    <p>Last Name: <span id="secondresult">Second</span></p>
     <script src="formstuff.js"></script>
 </body>
 
