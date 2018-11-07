@@ -1,0 +1,17 @@
+h1, h3, {
+    text-align: center;
+    font-family: "Consolas";
+}
+form {
+    text-align: center;
+}
+div {
+    
+    text-align: center;
+}
+body {
+    background-color: #789bd3;
+}
+p {
+    display: table;
+}
