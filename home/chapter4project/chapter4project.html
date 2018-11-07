@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+      CIS166AA - JavaScript      
+
+      Programming Informational Webpage      
+      
+      Author: Andrew Dorre
+      Date:   11/6/2018
+
+      Filename: chapter4project.html
+   -->
+   <title>Andrew Dorre - Chapter 4 Project</title>
+   <script src="modernizr.custom.05819.js"></script>
+</head>
+<body>
+    <nav>| <a href="../index.html">Home</a> |</nav> 
+    <h1>Chapter 4 Project - Exception Handling</h1>
+    <h3>This page will use exception handling to ensure that the form is filled out correctly.</h3>
+    <!--Used this to make a quick form: https://www.w3schools.com/html/tryit.asp?filename=tryhtml_form_submit-->
+    <form id="testForm">
+        First name:<br>
+        <input type="text" id="firstname" value=""><br>
+        Last name:<br>
+        <input type="text" id="lastname" value=""><br>
+        <br>        
+    </form>
+    <button onclick="displayResults()">Submit</button>
+    <br><br>
+    <p id="firstresult">First</p><br>
+    <p id="secondresult">Second</p>
+    <script src="formstuff.js"></script>
+</body>
+
