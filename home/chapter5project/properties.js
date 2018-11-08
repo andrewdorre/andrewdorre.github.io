@@ -11,15 +11,17 @@ CIS166AA - JavaScript
 	  Filename: properties.js
 */
 
-var location = document.getElementById("location");
+
 
 // Submit button performs all the property queries
 function submitButton() {
+    
     // first using navigator object methods
     document.getElementById("webbrowser").innerText = "" + navigator.appName;
     document.getElementById("version").innerText = "" + navigator.appVersion;
-    // https://www.w3schools.com/html/html5_geolocation.asp
-    //document.getElementById("location").innerText = "" + navigator.geolocation(showPosition);
+    // This link showed me how to use the geolocation method https://www.w3schools.com/html/html5_geolocation.asp
+    // I made a function named getLocation, that also calls the showPosition() function. Both created using help
+    // from the website.        
     getLocation();
     document.getElementById("network").innerText = "" + navigator.onLine;
     document.getElementById("operatingsystem").innerText = "" + navigator.platform;
@@ -34,16 +36,17 @@ function submitButton() {
     document.getElementById("width").innerText = "" + screen.width;    
 }
 
-function getLocation() {
+function getLocation() {           
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
     } 
     else {
-        location.innerHTML = "Location info is not support in this browser or browser version.";
+        document.getElementById("location").innerHTML = "Location info is not support in this browser or browser version.";
     }
 }
+
 function showPosition(position) {
-    x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+    document.getElementById("location").innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
 }
 
 // Add event listeners to the button
