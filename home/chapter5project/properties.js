@@ -18,14 +18,14 @@ function submitButton() {
     
     // first using navigator object methods
     document.getElementById("webbrowser").innerText = "" + navigator.appName;
-    document.getElementById("version").innerText = "" + navigator.appVersion;
+    //document.getElementById("version").innerText = "" + navigator.appVersion;
     // This link showed me how to use the geolocation method https://www.w3schools.com/html/html5_geolocation.asp
     // I made a function named getLocation, that also calls the showPosition() function. Both created using help
     // from the website.        
     getLocation();
     document.getElementById("network").innerText = "" + navigator.onLine;
     document.getElementById("operatingsystem").innerText = "" + navigator.platform;
-    document.getElementById("useragent").innerText = "" + navigator.userAgent;
+    //document.getElementById("useragent").innerText = "" + navigator.userAgent;
 
     // here using screen object methods
     document.getElementById("availableheight").innerText = "" + screen.availHeight;
@@ -46,7 +46,7 @@ function getLocation() {
 }
 
 function showPosition(position) {
-    document.getElementById("location").innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+    document.getElementById("location").innerHTML = "Latitude: " + position.coords.latitude + " Longitude: " + position.coords.longitude;
 }
 
 // Add event listeners to the button

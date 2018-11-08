@@ -2,33 +2,35 @@ h1, h3 {
     text-align: center;
     font-family: "Consolas";
 }
-div {
+/* div {
     
     text-align: center;
-}
+} */
 body {
     background-color: #789bd3;
 }
 .table {
     /* display: table; */
+    display: inline-block;
+    /* background: #dddddd; */
+    /* float: left; */
+    padding-right: 50px;
+    height: 402px;
+
+}
+#sidebar {
     /* display: inline-block; */
-    background: #a2c2f2;
+    width: 500px;
+    float: left;
+    padding-right: 50px;
+    background: #a2c2f2;/* #678dcd; */
 }
 p {
-    text-align: left;
+    text-align: justify;
+    font-family: "Arial";
     /* padding-right: 150px; */
     /* display: table-row; */
-    display: inline-flex;
-}
-/* span {
-    display: table-column;
-
-} */
-.cell {
-    /* display: table-column; */
-    display: inline-table;
-    /* min-width: 100px; */
-    text-align: right;
+    /* display: inline-flex; */
 }
 .col1 {
     display: inline-table;
@@ -44,4 +46,17 @@ p {
 }
 li:nth-child(even) {
     background: #6486bc;
+}
+li:nth-child(odd) {
+    background: #a2c2f2;
+}
+#wrapper {
+    text-align: center;
+    /* display: block; */
+}
+#button {
+    /* background: #ffffff; */
+    display: block;
+    text-align: center;
+    padding-top: 10px;
 }
