@@ -11,12 +11,16 @@ CIS166AA - JavaScript
 	  Filename: properties.js
 */
 
+var location = document.getElementById("location");
+
 // Submit button performs all the property queries
 function submitButton() {
     // first using navigator object methods
     document.getElementById("webbrowser").innerText = "" + navigator.appName;
     document.getElementById("version").innerText = "" + navigator.appVersion;
-    document.getElementById("location").innerText = "" + navigator.geolocation;
+    // https://www.w3schools.com/html/html5_geolocation.asp
+    //document.getElementById("location").innerText = "" + navigator.geolocation(showPosition);
+    getLocation();
     document.getElementById("network").innerText = "" + navigator.onLine;
     document.getElementById("operatingsystem").innerText = "" + navigator.platform;
     document.getElementById("useragent").innerText = "" + navigator.userAgent;
@@ -28,6 +32,18 @@ function submitButton() {
     document.getElementById("height").innerText = "" + screen.height;    
     document.getElementById("pixeldepth").innerText = "" + screen.pixelDepth;
     document.getElementById("width").innerText = "" + screen.width;    
+}
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } 
+    else {
+        location.innerHTML = "Location info is not support in this browser or browser version.";
+    }
+}
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
 }
 
 // Add event listeners to the button
