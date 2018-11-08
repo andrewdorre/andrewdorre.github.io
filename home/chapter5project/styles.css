@@ -2,47 +2,33 @@ h1, h3 {
     text-align: center;
     font-family: "Consolas";
 }
-/* div {
-    
-    text-align: center;
-} */
 body {
     background-color: #789bd3;
 }
-.table {
-    /* display: table; */
-    display: inline-block;
-    /* background: #dddddd; */
-    /* float: left; */
+.table {    
+    display: inline-block;    
     padding-right: 50px;
     height: 402px;
-
 }
-#sidebar {
-    /* display: inline-block; */
+#sidebar {    
     width: 500px;
     float: left;
     padding-right: 50px;
-    background: #a2c2f2;/* #678dcd; */
+    background: #a2c2f2;
 }
 p {
     text-align: justify;
-    font-family: "Arial";
-    /* padding-right: 150px; */
-    /* display: table-row; */
-    /* display: inline-flex; */
+    font-family: "Arial";    
 }
 .col1 {
     display: inline-table;
     list-style: none;
-    text-align: left;
-    /* background: #6486bc; */
+    text-align: left;    
 }
 .col2 {
     display: inline-table;
     list-style: none;
-    text-align: right;
-        
+    text-align: right;        
 }
 li:nth-child(even) {
     background: #6486bc;
@@ -51,11 +37,9 @@ li:nth-child(odd) {
     background: #a2c2f2;
 }
 #wrapper {
-    text-align: center;
-    /* display: block; */
+    text-align: center;    
 }
-#button {
-    /* background: #ffffff; */
+#button {    
     display: block;
     text-align: center;
     padding-top: 10px;

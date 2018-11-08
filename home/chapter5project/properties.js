@@ -11,14 +11,12 @@ CIS166AA - JavaScript
 	  Filename: properties.js
 */
 
-
-
 // Submit button performs all the property queries
-function submitButton() {
-    
+function submitButton() {    
     // first using navigator object methods
     document.getElementById("webbrowser").innerText = "" + navigator.appName;
     //document.getElementById("version").innerText = "" + navigator.appVersion;
+    
     // This link showed me how to use the geolocation method https://www.w3schools.com/html/html5_geolocation.asp
     // I made a function named getLocation, that also calls the showPosition() function. Both created using help
     // from the website.        
