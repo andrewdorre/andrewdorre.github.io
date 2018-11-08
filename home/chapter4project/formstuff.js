@@ -38,6 +38,11 @@ function displayResults(){
         window.alert(fieldError);
         return false;
     }
+    // used the finally statement to remove any input into the fields. Cleaning it up for the next use
+    finally {
+        document.getElementById("firstname").value = "";
+        document.getElementById("lastname").value = "";
+    }
     
 
     document.getElementById("firstresult").innerHTML = "" + firstName;

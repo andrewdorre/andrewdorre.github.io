@@ -11,6 +11,30 @@
 
       Filename: chapter4project.html
    -->
+
+   <!--
+       I used several debugging techniques from the chapter. At first I ran into a problem where my script didn't appear to be doing anything.
+       Pretty soon I realized that I hadn't added a reference to the script into my html document. Woops! Embarrassing. I don't know if that
+       counts as basic troubleshooting, but reading over the code helped for sure. Next, I ran into a problem with the output. Once a name was entered,
+       I wasn't receiving anything back, or I wasn't getting what I wanted. I used the debugging tools in Chrome and Edge and put a breakpoint into
+       my formstuff.js file right after the first name variable is filled with "document.getElementbyId("firstname");"
+       Looking at the variable after the breakpoint paused the program, I noticed that it had "[object HTMLInputElement]", which told me that
+       I wasn't putting the right data into the variable. After a bit I figured out that I needed to include the "value" method on the end of
+       getElementById().
+
+       As you can probably see in the code, I also included a try..catch statement. Originally the plan was simply to catch if the user
+       left either, or both fields blank, and throw up an alert window. But I figured, what if the user inputs a number? I researched a bit,
+       and found that there's a fairly simple method that stops a user from entering text into a field that requires numbers (not a number, NaN),
+       but doing the reverse and allowing text instead of numbers was not so easy. I was familiar with regular expressions, and found a mention
+       of one in a stackoverflow post that did what I wanted. Now I have exceptions for when the first OR last name fields are empty, and also
+       if the first OR last name fields do not contain alphabet characters. Unfortunately a user could still input a single letter in each, but
+       I guess this is a decent start.
+
+       Finally, I added a finally statement (no pun intended). This is pretty simple, but it clears the input fields so that if a user
+       entered information incorrectly, they don't have to delete existing data. Mostly quality of life, but it's a nice touch I think! Also,
+       I noticed in the debugger that, even though I included a reference to the modernizr script in the code, I forgot to copy the js file over.
+       I copied it over and that took care of the error!
+   -->
    <title>Andrew Dorre - Chapter 4 Project</title>
    <link rel="stylesheet" type="text/css" href="styles.css">
    <script src="modernizr.custom.05819.js"></script>
@@ -28,6 +52,9 @@
         <br>                
     </form>
     <div>
+        <!--Still having trouble getting a form submit button to work. That's why I used a button outside of the form.
+        Also realized after reading chapter 5 that I can really make anything a button, as the example exercise for Ch5
+        appears to just use a div that's dressed up to look like a button. Cool-->
         <button onclick="displayResults()">Submit</button>
     </div>
     <br>
