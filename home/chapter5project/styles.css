@@ -1,9 +1,6 @@
-h1, h3, {
+h1, h3 {
     text-align: center;
     font-family: "Consolas";
-}
-form {
-    text-align: center;
 }
 div {
     
@@ -12,6 +9,39 @@ div {
 body {
     background-color: #789bd3;
 }
+.table {
+    /* display: table; */
+    /* display: inline-block; */
+    background: #a2c2f2;
+}
 p {
-    display: table;
+    text-align: left;
+    /* padding-right: 150px; */
+    /* display: table-row; */
+    display: inline-flex;
+}
+/* span {
+    display: table-column;
+
+} */
+.cell {
+    /* display: table-column; */
+    display: inline-table;
+    /* min-width: 100px; */
+    text-align: right;
+}
+.col1 {
+    display: inline-table;
+    list-style: none;
+    text-align: left;
+    /* background: #6486bc; */
+}
+.col2 {
+    display: inline-table;
+    list-style: none;
+    text-align: right;
+        
+}
+li:nth-child(even) {
+    background: #6486bc;
 }
