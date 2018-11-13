@@ -11,6 +11,7 @@ fieldset {
     border: solid;
     border: #a5a8c7;
     background-color: #a5a8c7;
-    width: 150;
-    height: 100;
+    width: 200;
+    height: 150;
+    display: inline-block;
 }
