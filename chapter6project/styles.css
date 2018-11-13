@@ -1,4 +1,6 @@
-body, h1, h2, h3 {
-    background-color: #4b5990;
+body {
+    background-color: #4b5990;    
+}
+h1, h2, h3 {
     color: "white";
 }
