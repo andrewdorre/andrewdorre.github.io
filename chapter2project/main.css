@@ -1,7 +1,12 @@
- form input {
+ form input {    
     display: inline-block;
  }
 
  form label {
     display: inline-block;    
+ }
+
+ fieldset {
+     display: inline;
+     /*width: 30%;*/
  }
