@@ -4,3 +4,6 @@ body {
 h1, h2, h3, label, legend {
     color: #e0e1ec;
 }
+fieldset {
+    display: inline-block;
+}
