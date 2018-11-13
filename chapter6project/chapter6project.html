@@ -26,7 +26,7 @@
     </nav>
     <h1>Chapter 6 - Form Validation</h1>
 
-    <fieldset id="widgetform">
+    <fieldset id="radiofield">
         <legend>How much do you enjoy this webpage?</legend>
         <div id="surveyradio">
             <input id="greatlyenjoy" name="surveyselect" type="radio" value="5">
@@ -40,7 +40,20 @@
             <input id="greatlydislike" name="surveyselect" type="radio" value="1">
             <label for="greatlydislike">Don't quit your day job!</label><br>
         </div>
-    </fieldset>
+    </fieldset><br>
+    <fieldset id="dropdownfield">
+        <legend>Select what you would most like to see</legend>
+        <div id="surveydropdown">
+            <select name="dropdrown">
+                <option value="">Select...</option>
+                <option value="flashybackground">Flashy Background</option>
+                <option value="flashytext">Flashy Text</option>
+                <option value="gifs">More GIFs</option>
+                <option value="math">More Math</option>
+                <option value="alloftheabove">None of the Above</option>
+            </select>
+        </div>
+        </fieldset><br>
 
     </form>
 </body>
