@@ -25,48 +25,52 @@
         | <a href="../index.html">Home</a> |
     </nav>
     <h1>Chapter 6 - Form Validation</h1>
-
-    <fieldset id="radiofield">
-        <legend>How much do you enjoy this webpage?</legend>
-        <div id="surveyradio">
-            <input id="greatlyenjoy" name="surveyselect" type="radio" value="5">
-            <label for="greatlyenjoy">Greatly Enjoy!</label><br>
-            <input id="somewhatenjoy" name="surveyselect" type="radio" value="4">
-            <label for="somewhatenjoy">Somewhat Enjoy...</label><br>
-            <input id="indifferent" name="surveyselect" type="radio" value="3">
-            <label for="indifferent">Meh...</label><br>
-            <input id="somewhatdislike" name="surveyselect" type="radio" value="2">
-            <label for="somewhatdislike">Somewhat Dislike</label><br>
-            <input id="greatlydislike" name="surveyselect" type="radio" value="1">
-            <label for="greatlydislike">Don't quit your day job!</label><br>
-        </div>
-    </fieldset><br><br>
-    <fieldset id="dropdownfield">
-        <legend>Select what you would most like to see</legend>
-        <div id="surveydropdown">
-            <select name="dropdrown">
-                <option value="">Select...</option>
-                <option value="flashybackground">Flashy Background</option>
-                <option value="flashytext">Flashy Text</option>
-                <option value="gifs">More GIFs</option>
-                <option value="math">More Math</option>
-                <option value="alloftheabove">None of the Above</option>
-            </select>
-        </div>
-    </fieldset><br><br>
-    <fieldset id="textfield">
-        <legend>Please submit comments to improve the site</legend>
-        <div id="surveytext">
-            <label for="name">Name:</label><br>
-            <input id="name" type="text"><br><br>
-            <label for="email">Email:</label><br>
-            <input id="email" type="text"><br><br>
-            <label for="comment">Comments:</label><br>
-            <textarea id="comment" placeholder="Comments! Here!"></textarea>
-        </div>
-    </fieldset><br><br>
-    <div id="button">
-        <p>Submit</p>
-    </div>
+    <form action="results.htm">
+        <fieldset id="radiofield">
+            <legend>How much do you enjoy this webpage?</legend>
+            <div id="surveyradio">
+                <input id="greatlyenjoy" name="surveyselect" type="radio" value="5">
+                <label for="greatlyenjoy">Greatly Enjoy!</label><br>
+                <input id="somewhatenjoy" name="surveyselect" type="radio" value="4">
+                <label for="somewhatenjoy">Somewhat Enjoy...</label><br>
+                <input id="indifferent" name="surveyselect" type="radio" value="3">
+                <label for="indifferent">Meh...</label><br>
+                <input id="somewhatdislike" name="surveyselect" type="radio" value="2">
+                <label for="somewhatdislike">Somewhat Dislike</label><br>
+                <input id="greatlydislike" name="surveyselect" type="radio" value="1">
+                <label for="greatlydislike">Don't quit your day job!</label><br>
+            </div>
+        </fieldset><br><br>
+        <fieldset id="dropdownfield">
+            <legend>Select what you would most like to see</legend>
+            <div id="surveydropdown">
+                <select name="dropdrown" required>
+                    <option value="">Select...</option>
+                    <option value="flashybackground">Flashy Background</option>
+                    <option value="flashytext">Flashy Text</option>
+                    <option value="gifs">More GIFs</option>
+                    <option value="math">More Math</option>
+                    <option value="alloftheabove">None of the Above</option>
+                </select>
+            </div>
+        </fieldset><br><br>
+        <fieldset id="textfield">
+            <legend>Please submit comments to improve the site</legend>
+            <div id="surveytext">
+                <label for="name">Name:</label><br>
+                <input id="name" type="text" required><br><br>
+                <label for="email">Email:</label><br>
+                <input id="email" type="email" required><br><br>
+                <label for="comment">Comments:</label><br>
+                <textarea id="comment" placeholder="Comments! Here!"></textarea>
+            </div>
+        </fieldset><br><br>
+        
+        <input type="submit" value="Submit">
+        
+    </form>
+    <br>
+    <p id="submitText">This text should change</p>
+    <script src="validation.js"></script>
 </body>
 </html>
