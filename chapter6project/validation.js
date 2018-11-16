@@ -1,7 +1,34 @@
 "use strict";
 /* Added from book example */
 var formValidity = true;
-
+function validateRadio() {    
+    var errorDiv = document.querySelector("#radiofield .errorMessage");
+    var fieldsetValidity = true;
+    var survey = document.getElementsByName("surveyselect");
+    try {
+        if (!survey[0].checked && !survey[1].checked && !survey[2].checked && !survey[3].checked && !survey[4].checked) {
+            for (var i = 0; i < 5; i++) {
+                survey[i].style.outline = "1px solid red";
+            }
+            fieldsetValidity = false;
+        } else {
+            for (var i = 0; i < 5; i++) {
+                survey[i].style.outline = "";
+            }
+            fieldsetValidity = true;
+        }
+        if (!fieldsetValidity) {
+            throw "Please select a level of enjoyment!";
+        } else {
+            errorDiv.style.display = "none";
+        }        
+    }
+    catch (msg) {
+        errorDiv.style.display = "block";
+        errorDiv.innerHTML = msg;
+        formValidity = false;
+    }
+}
 function validateText() {
     var inputElements = document.querySelectorAll("#textfield input");
     var errorDiv = document.querySelectorAll("#textfield .errorMessage")[0];
@@ -19,8 +46,7 @@ function validateText() {
                 currentElement.style.background = "white";
                 currentElement.style.border = "";
             }
-        }
-        
+        }        
         if (fieldsetValidity === false) {            
                 throw "Please fill out all text fields!";            
         } else {
@@ -76,8 +102,7 @@ function validateComment() {
         if (msgBox.value === "") {
             comment.style.border = "3px solid red";
             comment.style.background = "rgb(255,233,233)";
-            throw "Please enter a comment!";
-            
+            throw "Please enter a comment!";            
         } else {
             errorDiv.style.display = "none";
             comment.style.border = "none";
@@ -97,10 +122,10 @@ function validateForm(evt) {
         evt.returnValue = false;
     }
     formValidity = true;
+    validateRadio();
     validateText();
     validateSelectors();
-    validateComment();
-    
+    validateComment();        
     if (formValidity === true) {
         document.getElementById("errorText").innerHTML = "";
         document.getElementById("errorText").style.display = "none";
@@ -111,8 +136,6 @@ function validateForm(evt) {
         scroll(0, 0);          
     }
 }
-
-
 var form = document.getElementsByTagName("form")[0];
 if (form.addEventListener) {
     form.addEventListener("submit", validateForm, false);

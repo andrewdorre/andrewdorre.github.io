@@ -1,8 +1,10 @@
 body {
-    background-color: #4b5990;    
+    /* background-color: #4b5990;     */
+    background-color: #d8eff0
 }
 h1, h2, h3, label, legend {
-    color: #e0e1ec;
+    /* color: #e0e1ec; */
+    color: #1c2728;
 }
 fieldset {
     display: inline-block;
