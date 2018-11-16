@@ -25,7 +25,9 @@
         | <a href="../index.html">Home</a> |
     </nav>
     <h1>Chapter 6 - Form Validation</h1>
-    <form action="results.htm">
+    <!-- Added from book example -->
+    <div id="errorText"></div>
+    <form action="results.htm" novalidate="novalidate">
         <fieldset id="radiofield">
             <legend>How much do you enjoy this webpage?</legend>
             <div id="surveyradio">
@@ -44,8 +46,8 @@
         <fieldset id="dropdownfield">
             <legend>Select what you would most like to see</legend>
             <div id="surveydropdown">
-                <select name="dropdrown" required>
-                    <option value="">Select...</option>
+                <select id="selection" name="dropdrown" required>
+                    <!-- <option value="">Select...</option> -->
                     <option value="flashybackground">Flashy Background</option>
                     <option value="flashytext">Flashy Text</option>
                     <option value="gifs">More GIFs</option>
@@ -53,6 +55,7 @@
                     <option value="alloftheabove">None of the Above</option>
                 </select>
             </div>
+            <div class="errorMessage"></div>
         </fieldset><br><br>
         <fieldset id="textfield">
             <legend>Please submit comments to improve the site</legend>
@@ -64,6 +67,7 @@
                 <label for="comment">Comments:</label><br>
                 <textarea id="comment" placeholder="Comments! Here!"></textarea>
             </div>
+            <div class="errorMessage"></div>
         </fieldset><br><br>
         
         <input type="submit" value="Submit">
