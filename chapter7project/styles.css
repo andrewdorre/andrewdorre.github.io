@@ -1,0 +1,21 @@
+body {
+    background-color: #4b5990;    
+}
+h1, h2, h3, label, legend {
+    color: #e0e1ec;
+}
+fieldset {
+    display: inline-block;
+    width: 300px
+}
+#button {
+    border: solid;
+    border: #a5a8c7;
+    background-color: #a5a8c7;
+    width: 75px;
+    height: 50px;
+    display: inline-block;
+}
+#buttonText {
+    text-align: center;
+}
