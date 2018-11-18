@@ -1,6 +1,23 @@
+/*
+CIS166AA - JavaScript
+      Chapter 6
+      Chapter case project
+
+      Enhance form validation
+      
+      Author: Andrew Dorre
+      Date:   11/18/2018
+
+	  Filename: validation.js
+*/
 "use strict";
 /* Added from book example */
+
+// Start off with formValidity at true. Since a user hasn't entered any info yet at this point,
+// there shouldn't be any red or screaming errors yet
 var formValidity = true;
+
+// first test the validity of the radio buttons. Make sure one is selected
 function validateRadio() {    
     var errorDiv = document.querySelector("#radiofield .errorMessage");
     var fieldsetValidity = true;
@@ -29,6 +46,16 @@ function validateRadio() {
         formValidity = false;
     }
 }
+// Used the following to create a regular expression that will validate an email address:
+// https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
+function validateEmail(email) {
+    var regex= /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return regex.test(String(email).toLowerCase());
+}
+
+// Next test the validity of all the text fields. Ensure they all have something in them.
+// in the case of the email address, I use a function with a regular expression to ensure 
+// that it is at least an attempt at an email address
 function validateText() {
     var inputElements = document.querySelectorAll("#textfield input");
     var errorDiv = document.querySelectorAll("#textfield .errorMessage")[0];
@@ -47,8 +74,15 @@ function validateText() {
                 currentElement.style.border = "";
             }
         }        
+        // Making use of my validateEmail function from above. If the second field in the textfield
+        // fieldset does not match the regular expression arguments, it'll fail
+        if (!validateEmail(inputElements[1].value)) {
+            inputElements[1].style.background = "rgb(255,233,233)";
+            inputElements[1].style.border = "3px solid red";
+            throw "Please submit a correct email address!";
+        }
         if (fieldsetValidity === false) {            
-                throw "Please fill out all text fields!";            
+            throw "Please fill out all text fields!";            
         } else {
             errorDiv.style.display = "none";
             errorDiv.innerHTML = "";
@@ -59,6 +93,7 @@ function validateText() {
         formValidity = false;
     }
 }
+// Now, test validity of the option selectors
 function validateSelectors() {
     var inputElements = document.querySelectorAll("#dropdownfield select");
     var errorDiv = document.querySelectorAll("#dropdownfield .errorMessage")[0];
@@ -94,6 +129,8 @@ function validateSelectors() {
         formValidity = false;
     }
 }
+// This is for the comment text field. It's a little different than the text input fields
+// Gave me a bit of trouble, but after looking over the book examples I finally got it working
 function validateComment() {
     var comment = document.querySelector("#textfield textarea");
     var errorDiv = document.querySelector("#textfield .errorMessage");
@@ -115,6 +152,7 @@ function validateComment() {
         formValidity = false;
     }
 }
+// This is what happens if anything on the form is not validated
 function validateForm(evt) {
     if (evt.preventDefault) {
         evt.preventDefault();
@@ -148,9 +186,10 @@ function removeSelectDefaults() {
         emptySelect[i].selectedIndex = -1;
     }
 }
-function submit() {
+// just some code for early testing I did on the page. it could probably be deleted.
+/* function submit() {
     document.getElementById("submitText").innerHTML = "You clicked a button!";
-}
+} */
 if (window.addEventListener) {
     window.addEventListener("load", removeSelectDefaults, false);
 } else if (window.attachEvent) {
