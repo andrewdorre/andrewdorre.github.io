@@ -39,9 +39,9 @@ function date() {
 
     /* document.getElementById("monthDiff").innerHTML = "Difference in number of months: " + monthDiff; */
 
-    dayDiff = Math.abs(today.getDay() - userDate.getDay());
+    dayDiff = Math.abs(today.getDate() - userDate.getDate());
 
-    /* document.getElementById("dayDiff").innerHTML = "Difference in number of days: " + dayDiff; */
+    /* document.getElementById("dayDiff").innerHTML = "Today's day: " + today.getDate() + " your date day: " + userDate.getDate(); */
 
     document.getElementById("dateDiff").innerHTML = "There is a difference of " + yearDiff + " years, " + monthDiff + " months, and " + dayDiff + " days.";
 
