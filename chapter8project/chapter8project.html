@@ -24,58 +24,33 @@
     <nav>
         | <a href="../index.html">Home</a> |
     </nav>
-    <h1>Chapter 8 - String Manipulation</h1>
-    <!-- Added from book example -->
-    <div id="errorText"></div>
-    <form action="results.htm" novalidate="novalidate">
-        <fieldset id="radiofield">
-            <legend>How much do you enjoy this webpage?</legend>
-            <div id="surveyradio">
-                <input id="greatlyenjoy" name="surveyselect" type="radio" value="5">
-                <label for="greatlyenjoy">Greatly Enjoy!</label><br>
-                <input id="somewhatenjoy" name="surveyselect" type="radio" value="4">
-                <label for="somewhatenjoy">Somewhat Enjoy...</label><br>
-                <input id="indifferent" name="surveyselect" type="radio" value="3">
-                <label for="indifferent">Meh...</label><br>
-                <input id="somewhatdislike" name="surveyselect" type="radio" value="2">
-                <label for="somewhatdislike">Somewhat Dislike</label><br>
-                <input id="greatlydislike" name="surveyselect" type="radio" value="1">
-                <label for="greatlydislike">Don't quit your day job!</label><br>
-            </div>
-            <div class="errorMessage"></div>
-        </fieldset><br><br>
-        <fieldset id="dropdownfield">
-            <legend>Select what you would most like to see</legend>
-            <div id="surveydropdown">
-                <select id="selection" name="dropdrown" required>
-                    <!-- <option value="">Select...</option> -->
-                    <option value="flashybackground">Flashy Background</option>
-                    <option value="flashytext">Flashy Text</option>
-                    <option value="gifs">More GIFs</option>
-                    <option value="math">More Math</option>
-                    <option value="alloftheabove">None of the Above</option>
-                </select>
-            </div>
-            <div class="errorMessage"></div>
-        </fieldset><br><br>
-        <fieldset id="textfield">
-            <legend>Please submit comments to improve the site</legend>
-            <div id="surveytext">
-                <label for="name">Name:</label><br>
-                <input id="name" type="text" required><br><br>
-                <label for="email">Email:</label><br>
-                <input id="email" type="email" required placeholder="you@email.com"><br><br>
-                <label for="comment">Comments:</label><br>
-                <textarea id="comment" placeholder="Comments! Here!"></textarea>
-            </div>
-            <div class="errorMessage"></div>
-        </fieldset><br><br>
-        
-        <input type="submit" value="Submit">
+    <h1>Chapter 8 - String Manipulation</h1>    
+    
+    <form>
+        <fieldset id="checkboxes">
+            <legend>What toppings do you want on your pizza?</legend>
+            <div id="pizzachecks">
+                <input type="checkbox" id="pepperoni" value="Pepperoni" name="toppings">
+                <label for="pepperoni">Pepperoni</label><br>
+                <input type="checkbox" id="mushrooms" value="Mushrooms" name="toppings">
+                <label for="mushrooms">Mushrooms</label><br>
+                <input type="checkbox" id="olives" value="Olives" name="toppings">
+                <label for="olives">Olives</label><br>
+                <input type="checkbox" id="bellpeppers" value="Bell Peppers" name="toppings">
+                <label for="bellpeppers">Bell Peppers</label><br>
+                <input type="checkbox" id="sausage" value="Sausage" name="toppings">
+                <label for="sausage">Sausage</label><br>
+                <input type="checkbox" id="extracheese" value="Extra Cheese" name="toppings">
+                <label for="extracheese">Extra Cheese</label>
+            </div>            
+        </fieldset><br><br>        
         
     </form>
-    <br>
-    <!-- <p id="submitText">This text should change</p> -->
+    <div id="toppingsdiv">
+        <h3>Toppings List</h3>
+        <ul id="toppingslist"></ul>
+    </div>
+    <br>    
     <script src="string.js"></script>
 </body>
 </html>
