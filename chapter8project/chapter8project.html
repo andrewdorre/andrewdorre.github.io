@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--
+      CIS166AA - JavaScript
+      Chapter 8
+      Chapter case project
+
+      Form Validation
+      
+      Author: Andrew Dorre
+      Date:   11/22/2018
+
+      Filename: chapter8project.html
+   -->
+<title>Andrew Dorre - CIS166AA - Chapter 8 Project</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<script src="modernizr.custom.05819.js"></script>
+
+</head>
+
+<body>
+    <nav>
+        | <a href="../index.html">Home</a> |
+    </nav>
+    <h1>Chapter 8 - String Manipulation</h1>
+    <!-- Added from book example -->
+    <div id="errorText"></div>
+    <form action="results.htm" novalidate="novalidate">
+        <fieldset id="radiofield">
+            <legend>How much do you enjoy this webpage?</legend>
+            <div id="surveyradio">
+                <input id="greatlyenjoy" name="surveyselect" type="radio" value="5">
+                <label for="greatlyenjoy">Greatly Enjoy!</label><br>
+                <input id="somewhatenjoy" name="surveyselect" type="radio" value="4">
+                <label for="somewhatenjoy">Somewhat Enjoy...</label><br>
+                <input id="indifferent" name="surveyselect" type="radio" value="3">
+                <label for="indifferent">Meh...</label><br>
+                <input id="somewhatdislike" name="surveyselect" type="radio" value="2">
+                <label for="somewhatdislike">Somewhat Dislike</label><br>
+                <input id="greatlydislike" name="surveyselect" type="radio" value="1">
+                <label for="greatlydislike">Don't quit your day job!</label><br>
+            </div>
+            <div class="errorMessage"></div>
+        </fieldset><br><br>
+        <fieldset id="dropdownfield">
+            <legend>Select what you would most like to see</legend>
+            <div id="surveydropdown">
+                <select id="selection" name="dropdrown" required>
+                    <!-- <option value="">Select...</option> -->
+                    <option value="flashybackground">Flashy Background</option>
+                    <option value="flashytext">Flashy Text</option>
+                    <option value="gifs">More GIFs</option>
+                    <option value="math">More Math</option>
+                    <option value="alloftheabove">None of the Above</option>
+                </select>
+            </div>
+            <div class="errorMessage"></div>
+        </fieldset><br><br>
+        <fieldset id="textfield">
+            <legend>Please submit comments to improve the site</legend>
+            <div id="surveytext">
+                <label for="name">Name:</label><br>
+                <input id="name" type="text" required><br><br>
+                <label for="email">Email:</label><br>
+                <input id="email" type="email" required placeholder="you@email.com"><br><br>
+                <label for="comment">Comments:</label><br>
+                <textarea id="comment" placeholder="Comments! Here!"></textarea>
+            </div>
+            <div class="errorMessage"></div>
+        </fieldset><br><br>
+        
+        <input type="submit" value="Submit">
+        
+    </form>
+    <br>
+    <!-- <p id="submitText">This text should change</p> -->
+    <script src="string.js"></script>
+</body>
+</html>
