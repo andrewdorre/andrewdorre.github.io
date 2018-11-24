@@ -81,6 +81,11 @@ function validateText() {
             inputElements[1].style.border = "3px solid red";
             throw "Please submit a correct email address!";
         }
+        if (/^[a-zA-Z]+$/.test(document.getElementById("name")) === false) {
+            inputElements[0].style.background = "rgb(255,233,233)";
+            inputElements[0].style.border = "3px solid red";
+            throw "Please submit a valid name!";
+        }
         if (fieldsetValidity === false) {            
             throw "Please fill out all text fields!";            
         } else {
