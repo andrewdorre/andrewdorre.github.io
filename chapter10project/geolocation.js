@@ -12,43 +12,25 @@
 */
 "use strict";
 
-var waitForUser;
-
-function geoTest() {
-    waitForUser = setTimeout(fail, 10000);
-    if (navigator.geolocation) {
-       navigator.geolocation.getCurrentPosition(initialize, fail, {timeout: 10000});
-    } else {
-       fail();
-    }
- }
-
-function showPosition(position) {
-    clearTimeout(waitForUser);
-    //var latlon = position.coords.latitude + "," + position.coords.longitude;
-    var currPosLat = position.coords.latitude;
-    var currPosLng = position.coords.longitude;
-    var mapOptions = {
-       center: new google.maps.LatLng(currPosLat, currPosLng),
-       zoom: 11
-    };
-    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-
+function initMap() {
+    var map;
+    map = new google.maps.Map(document.getElementById("map"), {
+        center: {lat: -34.397, lng: 150.644},
+        zoom: 8
+    });
 }
 
 function createEventListeners() {
     var buttonClick = document.getElementById("button");
     if (buttonClick.addEventListener) {
-        buttonClick.addEventListener("click", geoTest, false);
+        buttonClick.addEventListener("click", initMap, false);
     } else if (buttonClick.attachEvent) {
-        buttonClick.attachEvent("onclick", geoTest);
+        buttonClick.attachEvent("onclick", initMap);
     }
 }
-window.initMap = function() {};
 
 if (window.addEventListener) {
-    window.addEventListener("load", createEventListeners, false);
-    window.initMap = function() {};
+    window.addEventListener("load", createEventListeners, false); 
 } else if (window.attachEvent) {
     window.attachEvent("onload", createEventListeners);
 }
