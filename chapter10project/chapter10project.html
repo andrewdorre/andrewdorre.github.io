@@ -25,10 +25,10 @@
     </nav>
     <h1>Chapter 10 - Geolocation</h1>    
     <p id="location"></p>
-    <div id="map"></div>
+    <div id="map" onload="geoTest()"></div>
 
-    <button type="button" id="button" onclick="showPosition()">Get Location</button>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
+    <button type="button" id="button" onclick="geoTest()">Get Location</button>    
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZcFunvhXQm9cAeTsFW0PQoeXH44FwgAg&callback=initMap"></script>
     <script src="geolocation.js"></script>
 </body>
 </html>
