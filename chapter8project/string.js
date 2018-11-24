@@ -45,6 +45,13 @@ function addToppings(event) {
         }
     }
 }
+// used from book. Simply create a new variable to capture the 
+// pizzaToppings array using the .toString() method
+// but I also output it to a paragraph tag in the html to display it
+function convertToString() {
+    var arrayString = pizzaToppings.toString();
+    document.getElementById("tostring").innerHTML = arrayString;
+}
 
 // Create event listeners on the checkboxes, so that when they are clicked, it triggers
 // the javascript
