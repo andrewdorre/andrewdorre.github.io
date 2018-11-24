@@ -54,6 +54,17 @@ function date() {
     year = document.getElementById("yearSubmit").value;
     month = document.getElementById("monthSubmit").value;
     day = document.getElementById("daySubmit").value;
+
+    if (/.{4,4}$/.test(year) === false) {
+        window.alert("Enter a year in the form of 4 digits");
+    }
+    else if (/.{1,2}$/.test(month) === false) {
+        window.alert("Enter a month in the form of 2 digits");
+    }
+    else if (/.{1,2}$/.test(day) === false) {
+        window.alert("Enter a day in the form of 2 digits");
+    }
+
     userDate.setFullYear(year, month - 1, day);
     document.getElementById("userDate").innerHTML = "Date you entered: " + userDate;
     /* solution = today.getTime() - userDate.getTime();
