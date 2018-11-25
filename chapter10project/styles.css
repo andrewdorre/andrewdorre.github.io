@@ -1,6 +1,8 @@
-body {
+html, body {
     /* background-color: #4b5990;     */
-    background-color: #d8eff0
+    background-color: #d8eff0;
+    height: 80%;
+    width: 70%;
 }
 h1, h2, h3, label, legend {
     /* color: #e0e1ec; */
@@ -8,7 +10,7 @@ h1, h2, h3, label, legend {
 }
 fieldset {
     display: inline-block;
-    width: 300px
+    width: 300px;
 }
 #button {
     border: solid;
@@ -32,4 +34,9 @@ fieldset {
    background: rgb(124,124,136);
    color: white;
    border: 2px solid rgb(190,50,38);
+}
+#map {
+    display: none;
+    /* height: 100%;
+    width: 100%; */
 }
