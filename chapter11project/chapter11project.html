@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--
+      CIS166AA - JavaScript
+      Chapter 11
+      Chapter case project
+
+      Ajax with JSON-P
+      
+      Author: Andrew Dorre
+      Date:   11/27/2018
+
+      Filename: chapter11project.html
+
+      Powered by https://newsapi.org 
+   -->
+    <title>Andrew Dorre - CIS166AA - Chapter 11 Project</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <nav>
+        | <a href="../index.html">Home</a> |
+    </nav>
+    <h1>Chapter 11 - Ajax with JSON-P</h1>
+    <div>
+        <h2>News</h2>
+        <article id="news">
+            <p id="newstest"></p>
+            <p id="test2"></p>
+        </article>
+    </div>
+    <button id="button" onclick="testFunc()">Get News</button>
+    <script>
+    /* var url = 'https://newsapi.org/v2/top-headlines?' +
+            'country=us&' +
+            'apiKey=5cb35fea7dfd4098abd2498570bdcfb9';
+        var i, x, test = "";
+        
+
+        var req = new Request(url);
+        fetch(req)
+            .then(function (response) {
+                var test = console.log(response.json());   
+                //console.log(articles)             
+            })
+        
+        /* for (i in req.articles) {
+            x += "<h2>" + req.articles[i].title + "</h2>";            
+        } */
+        //document.getElementById("newstest").innerHTML = x
+        //document.getElementById("test2").innerHTML = req[0].response.body;
+        //document.getElementById("test2").innerHTML = test; */
+        </script>
+    <script src="newsJSONP.js"></script>
+    
+</body>
+</html>
