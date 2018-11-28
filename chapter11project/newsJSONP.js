@@ -18,16 +18,21 @@ var url = 'https://newsapi.org/v2/top-headlines?' +
     'country=us&' +
     'apiKey=5cb35fea7dfd4098abd2498570bdcfb9';
 var i, x, test = "";
+var myObj;
 
 var req = new Request(url);
 
 function testFunc() {
-    var object = fetch(req)
+    fetch(req)
         .then(function (response) {
             console.log(response.json());
-            //console.log(articles)                
-            
+            /* myObj = response.json(); */
         })
+        
+        /* document.getElementById("test2").innerHTML = x; */
+            //console.log(response.json());
+            //console.log(articles)                           
+        
         /* .then(function (response) {
             
         var object = response.json();
@@ -40,13 +45,15 @@ function testFunc() {
     //console.log(object);
     //var myJSON = JSON.parse(object);
     //var stringed = JSON.stringify(myJSON);
-    for (i = 0; i < object.articles.length; i++) {
-        test = object.articles[i];
-        document.getElementById("test2").innerHTML = object.articles;
-    }
+    //var json = JSON.parse(object);
+    /* JSON.parse(myObj);
+    alert(myObj["object"]["articles"]["0"]["author"]); */
     
-    
-    
+}
+function openPromise() {
+    var json = JSON.parse(object);
+
+    alert(json["articles"]);
 }
 
 function createEventListeners() {
