@@ -41,13 +41,19 @@ function testFunc(url, callback) {
 testFunc(url, function (data) {
     document.getElementById("test2").innerHTML = data["status"];
 
-    var html = "<h2>" + data["status"] + "</h2>";
-    html += "<ul>";
+    var html = "<tr>" +
+        "<th>Title</th>" +
+        "<th>Source</th>" +
+        "<th>Author</th>" +
+        "<th>Link</th>" +
+        "</tr>";    
     for (var i = 0; i < data["articles"].length; i++) {
-        html += '<li>' + data["articles"][i]["title"] + "</li>";
-    }
-    html += "</ul>";
-    document.getElementById("newstest").innerHTML = html;
+        html += "<tr><td>" + data["articles"][i]["title"] + "</td>";
+        html += "<td>" + data["articles"][i]["source"]["name"] + "</td>";
+        html += "<td>" + data["articles"][i]["author"] + "</td>";
+        html += "<td><a href=\"" + data["articles"][i]["url"] + "\">Link</a></td></tr>";
+    }    
+    document.getElementById("tablebody").innerHTML = html;
 });
 
 function createEventListeners() {
