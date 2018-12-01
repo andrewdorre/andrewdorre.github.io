@@ -40,6 +40,9 @@ fieldset {
     /* height: 100%;
     width: 100%; */
 }
+/* These styles were added for Chapter 11. I took them from a previous PHP
+project, but originally I figured out how to do the alternating color rows
+for a table from W3Schools */
 td, th {
     border: 1px solid #dddddd;
     text-align: left;

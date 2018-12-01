@@ -12,17 +12,28 @@
 
     Powered by https://newsapi.org
 */
-// This saved my life: https://code-maven.com/ajax-request-for-json-data
 "use strict";
-const Http = new XMLHttpRequest();
 
+// This URL was taken from newsapi.org's own example. I also tested this using
+// console.log and Code Beautify to ensure I knew what the JSON tables looked like
+// https://codebeautify.org/jsonviewer
 var url = 'https://newsapi.org/v2/top-headlines?' +
     'country=us&' +
     'apiKey=5cb35fea7dfd4098abd2498570bdcfb9';
 
-function testFunc(url, callback) {
+// This is where I had a hard time. I know it was done similarly in the book,
+// but I think the book confused me with the talk of proxies, and I thought that
+// this stuff was unnecessary. Que several hours, and I finally researched and stumbled
+// across Code Maven. This helped me get the connection set up, but more importantly.
+// helped me figure out how to access the JSON object arrays and enter them into
+// the html of the site.
+// https://code-maven.com/ajax-request-for-json-data
+function getNews(url, callback) {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
+// Here it checks to ensure it is able to successfully connect to
+// the web service. If it can, it parses the JSON data to put it in
+// a format that is easily accessible below
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             console.log('responseText:' + xmlhttp.responseText);
             try {
@@ -38,9 +49,17 @@ function testFunc(url, callback) {
     xmlhttp.send();    
 }
 
-testFunc(url, function (data) {
-    document.getElementById("test2").innerHTML = data["status"];
+getNews(url, function (data) {
+// I started with this status just to see if I could see anything outside of
+// the console log. When I finally saw an "ok", it was a very happy moment!
+// I thought it was ok to leave it in, in case there is some sort of status
+// issue with the web service.
+    document.getElementById("status").innerHTML = "Status: " + data["status"];
 
+// Here is where we get into the weeds a bit. I used a table similar to one I
+// created for my PHP class here. Basically the table headers are built inside
+// of a variable, and then a for loop creates a row with the data that should be
+// under each header after that.
     var html = "<tr>" +
         "<th>Title</th>" +
         "<th>Source</th>" +
@@ -53,20 +72,7 @@ testFunc(url, function (data) {
         html += "<td>" + data["articles"][i]["author"] + "</td>";
         html += "<td><a href=\"" + data["articles"][i]["url"] + "\">Link</a></td></tr>";
     }    
+// This inserts the html variable into the table body element in the HTML file.
+// At this point, the html variable should contain a fully built table
     document.getElementById("tablebody").innerHTML = html;
 });
-
-function createEventListeners() {
-    var buttonClick = document.getElementById("button");
-    if (buttonClick.addEventListener) {
-        buttonClick.addEventListener("click", testFunc, false);
-    } else if (buttonClick.attachEvent) {
-        buttonClick.attachEvent("onclick", testFunc);
-    }
-}
-
-if (window.addEventListener) {
-    window.addEventListener("load", createEventListeners, false);
-} else if (window.attachEvent) {
-    window.attachEvent("onload", createEventListeners);
-}
